@@ -7,6 +7,8 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import BrandsSection from "@/components/home/BrandsSection";
 import CTASection from "@/components/home/CTASection";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const featuredCars = await prisma.car.findMany({
     where: { featured: true },
