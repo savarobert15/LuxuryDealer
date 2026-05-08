@@ -47,9 +47,9 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
   });
 
   return (
-    <section className="py-12 bg-[#F8F9FA] min-h-screen">
+    <section className="py-8 md:py-12 bg-[#F8F9FA] min-h-screen">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 mb-10 md:mb-16">
           <CarGallery images={car.images} title={car.title} />
           <CarInfo car={car} />
         </div>

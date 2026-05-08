@@ -6,8 +6,8 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-[#0A0A0A] text-gray-400 border-t border-white/10">
-      <Container className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <Container className="py-10 md:py-16">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-6">

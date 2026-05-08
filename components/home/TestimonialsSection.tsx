@@ -30,13 +30,13 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 bg-[#0A0A0A]">
+    <section className="py-12 md:py-24 bg-[#0A0A0A]">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <span className="text-[#D90429] font-semibold text-sm uppercase tracking-widest">
             Testimoniale

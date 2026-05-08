@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="py-12 bg-[#F8F9FA] min-h-screen">
+    <section className="py-8 md:py-12 bg-[#F8F9FA] min-h-screen">
       <Container>
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <span className="text-[#D90429] font-semibold text-sm uppercase tracking-widest">
             Contactează-ne
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0A0A0A] mt-3">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#0A0A0A] mt-3">
             Suntem Aici pentru Tine
           </h1>
           <p className="text-[#1F2937] mt-4 max-w-2xl mx-auto text-lg">

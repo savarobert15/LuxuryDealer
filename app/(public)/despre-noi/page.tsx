@@ -58,7 +58,7 @@ export default function DespreNoiPage() {
   return (
     <main className="bg-[#F8F9FA] min-h-screen">
       {/* Hero */}
-      <section className="relative bg-[#0A0A0A] py-32 overflow-hidden">
+      <section className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
@@ -71,7 +71,7 @@ export default function DespreNoiPage() {
           <span className="text-[#D90429] font-semibold text-sm uppercase tracking-widest">
             Cine Suntem
           </span>
-          <h1 className="text-5xl md:text-7xl font-black text-white mt-4 leading-none">
+          <h1 className="text-4xl md:text-7xl font-black text-white mt-4 leading-none">
             DESPRE <span className="text-[#D90429]">NOI</span>
           </h1>
           <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
@@ -132,7 +132,7 @@ export default function DespreNoiPage() {
       </section>
 
       {/* Valori */}
-      <section className="py-24 bg-white border-t border-[#E5E7EB]">
+      <section className="py-12 md:py-24 bg-white border-t border-[#E5E7EB]">
         <Container>
           <div className="text-center mb-16">
             <span className="text-[#D90429] font-semibold text-sm uppercase tracking-widest">

@@ -36,14 +36,16 @@ export default function Navbar() {
       {/* Top strip */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#D90429] h-8 flex items-center">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            {/* Email — hidden on mobile */}
             <a
               href="mailto:contact@luxurydealer.ro"
-              className="flex items-center gap-1.5 text-white text-xs font-semibold tracking-wider hover:text-white/80 transition-colors"
+              className="hidden sm:flex items-center gap-1.5 text-white text-xs font-semibold tracking-wider hover:text-white/80 transition-colors"
             >
               <Mail className="w-3 h-3" />
               contact@luxurydealer.ro
             </a>
-            <div ref={phoneRef} className="relative">
+            {/* Phone — always visible, centered on mobile */}
+            <div ref={phoneRef} className="relative sm:mx-0 mx-auto">
               <button
                 onClick={() => setPhoneOpen((o) => !o)}
                 className="flex items-center gap-1.5 text-white text-xs font-semibold tracking-wider hover:text-white/80 transition-colors"
@@ -76,9 +78,10 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <span className="flex items-center gap-1.5 text-white text-xs font-medium tracking-wider">
+            {/* Address — hidden on mobile */}
+            <span className="hidden sm:flex items-center gap-1.5 text-white text-xs font-medium tracking-wider">
               <MapPin className="w-3 h-3 shrink-0" />
-              Str. Automobilului Nr. 1, București, România
+              Str. Automobilului Nr. 1, București
             </span>
           </div>
       </div>

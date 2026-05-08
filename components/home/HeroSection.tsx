@@ -47,52 +47,58 @@ const panels = [
 export default function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] overflow-hidden bg-[#0A0A0A]">
-      {/* Panels — each sized to its own region so image fills it properly */}
-      {panels.map((panel, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, scale: 1.06 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.3, delay: i * 0.15, ease: "easeOut" }}
-          className="absolute top-0 bottom-0"
-          style={panel.style}
-        >
-          {/* Image fills only this panel */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('${panel.img}')` }}
-          />
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-[#0A0A0A]/45" />
-          {/* Panel label */}
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 + i * 0.1 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/25 text-xs font-bold tracking-[0.4em] uppercase whitespace-nowrap pointer-events-none select-none"
-          >
-            {panel.label}
-          </motion.span>
-        </motion.div>
-      ))}
+      {/* Mobile: single background image */}
+      <div
+        className="absolute inset-0 md:hidden bg-cover bg-center"
+        style={{ backgroundImage: `url('${panels[0].img}')` }}
+      />
+      <div className="absolute inset-0 md:hidden bg-[#0A0A0A]/55" />
 
-      {/* Lightning-edge glows at cut lines — diagonal to match panel cuts */}
-      {["33.33%", "66.66%"].map((base, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 pointer-events-none opacity-70"
-          style={{
-            clipPath: `polygon(
-              calc(${base} + ${SKEW}px) 0%,
-              calc(${base} + ${SKEW + 2}px) 0%,
-              calc(${base} + 2px) 100%,
-              ${base} 100%
-            )`,
-            background:
-              "linear-gradient(to bottom, transparent 0%, #D90429 50%, transparent 100%)",
-          }}
-        />
-      ))}
+      {/* Desktop: 3-panel diagonal layout */}
+      <div className="hidden md:block absolute inset-0">
+        {panels.map((panel, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.3, delay: i * 0.15, ease: "easeOut" }}
+            className="absolute top-0 bottom-0"
+            style={panel.style}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url('${panel.img}')` }}
+            />
+            <div className="absolute inset-0 bg-[#0A0A0A]/45" />
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.2 + i * 0.1 }}
+              className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/25 text-xs font-bold tracking-[0.4em] uppercase whitespace-nowrap pointer-events-none select-none"
+            >
+              {panel.label}
+            </motion.span>
+          </motion.div>
+        ))}
+
+        {/* Lightning-edge glows */}
+        {["33.33%", "66.66%"].map((base, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 pointer-events-none opacity-70"
+            style={{
+              clipPath: `polygon(
+                calc(${base} + ${SKEW}px) 0%,
+                calc(${base} + ${SKEW + 2}px) 0%,
+                calc(${base} + 2px) 100%,
+                ${base} 100%
+              )`,
+              background:
+                "linear-gradient(to bottom, transparent 0%, #D90429 50%, transparent 100%)",
+            }}
+          />
+        ))}
+      </div>
 
       {/* Gradient for text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/30 via-transparent to-[#0A0A0A]/65 pointer-events-none" />
@@ -112,7 +118,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.75 }}
-          className="text-5xl md:text-8xl font-black text-white leading-none tracking-tight"
+          className="text-4xl sm:text-5xl md:text-8xl font-black text-white leading-none tracking-tight"
         >
           LUXURY
           <br />
@@ -132,18 +138,18 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.2 }}
-          className="flex gap-4 mt-10"
+          className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto items-center"
         >
           <Link
             href="/cars"
-            className="flex items-center gap-2 bg-[#D90429] text-white px-8 py-3.5 font-bold text-sm uppercase tracking-widest hover:bg-[#b80324] transition-colors"
+            className="flex items-center justify-center gap-2 bg-[#D90429] text-white px-8 py-3.5 font-bold text-sm uppercase tracking-widest hover:bg-[#b80324] transition-colors w-full sm:w-auto"
           >
             Vezi Colecția
             <ChevronRight className="w-4 h-4" />
           </Link>
           <Link
             href="/contact"
-            className="flex items-center gap-2 border border-white/30 text-white px-8 py-3.5 font-bold text-sm uppercase tracking-widest hover:border-white hover:bg-white/5 transition-all"
+            className="flex items-center justify-center gap-2 border border-white/30 text-white px-8 py-3.5 font-bold text-sm uppercase tracking-widest hover:border-white hover:bg-white/5 transition-all w-full sm:w-auto"
           >
             Test Drive
           </Link>

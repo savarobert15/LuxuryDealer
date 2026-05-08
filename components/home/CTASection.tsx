@@ -8,7 +8,7 @@ import { Phone, ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-gradient-to-r from-[#D90429] to-[#b80324] relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-r from-[#D90429] to-[#b80324] relative overflow-hidden">
       {/* Pattern overlay */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -27,7 +27,7 @@ export default function CTASection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
             Pregătit pentru Mașina Visurilor Tale?
           </motion.h2>
