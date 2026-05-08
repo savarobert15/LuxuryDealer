@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Car {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  brand        String
+  model        String
+  year         Int
+  mileage      Int
+  price        Int
+  fuelType     String
+  transmission String
+  category     String   @default("Sedan")
+  description  String   @default("")
+  images       String[]
+  featured     Boolean  @default(false)
+  isNew        Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Contact {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  phone     String
+  subject   String
+  message   String
+  carId     String?  @db.ObjectId
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+}
+
+model Brand {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @unique
+  logo      String   @default("")
+  country   String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
