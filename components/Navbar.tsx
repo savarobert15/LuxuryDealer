@@ -35,7 +35,7 @@ export default function Navbar() {
     <>
       {/* Top strip */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#D90429] h-8 flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center sm:justify-between">
             {/* Email — hidden on mobile */}
             <a
               href="mailto:contact@luxurydealer.ro"
@@ -45,7 +45,7 @@ export default function Navbar() {
               contact@luxurydealer.ro
             </a>
             {/* Phone — always visible, centered on mobile */}
-            <div ref={phoneRef} className="relative sm:mx-0 mx-auto">
+            <div ref={phoneRef} className="relative">
               <button
                 onClick={() => setPhoneOpen((o) => !o)}
                 className="flex items-center gap-1.5 text-white text-xs font-semibold tracking-wider hover:text-white/80 transition-colors"
