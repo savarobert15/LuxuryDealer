@@ -15,7 +15,7 @@ export default function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 shrink-0 bg-[#0A0A0A] min-h-screen flex flex-col">
+    <aside className="w-64 shrink-0 bg-[#0A0A0A] sticky top-0 h-screen flex flex-col overflow-y-auto">
       <div className="p-6 border-b border-white/10">
         <p className="text-white font-black text-lg tracking-tight">LUXURY<span className="text-[#D90429]">DEALER</span></p>
         <p className="text-white/40 text-xs mt-1">Admin Panel</p>
